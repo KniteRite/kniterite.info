@@ -1,0 +1,416 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+
+
+html {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 17px;
+  cursor: url("https://rc24.xyz/images/cursors/wii.cur"), default;
+  color: #c0c0c0;
+}
+
+body {
+  color: #000;
+}
+
+.header {
+  color: #2196F3;
+}
+
+.light {
+  color: #000;
+  /* yes I know this ain't white */
+}
+
+/* Materialize stuff */
+
+@media (prefers-color-scheme: dark) {
+  html {
+    background: #1c1c1c;
+  }
+
+  body {
+    color: #fff;
+  }
+
+  .light {
+    color: #fff;
+  }
+
+  .header {
+    color: #fff;
+  }
+
+  .collection .collection-item {
+    background-color: #222;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .collection.with-header .collection-header {
+    background-color: #222;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .card {
+    background-color: #222;
+  }
+}
+
+.actually-red {
+  color: #ea454b
+}
+
+a {
+  color: #00b0f4;
+  cursor: url("https://rc24.xyz/images/cursors/wii-hover.cur"), pointer;
+}
+
+.collection {
+  background: #222;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.button-collapse {
+  color: #26a69a;
+}
+
+.parallax-container {
+  min-height: 900px !important;
+  color: rgba(0, 0, 0, .9);
+}
+
+.parallax-container.small-parallax-container {
+  min-height: 0;
+}
+
+.parallax-container .section {
+  width: 100%;
+}
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    top: 40%;
+  }
+
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+.page-footer {
+  margin: 0;
+  a {
+    color: #fff;
+  }
+}
+
+.full-height {
+  min-height: 100%;
+  min-height: 100vh;
+}
+
+.herohead{
+  display:none;
+}
+
+/* RiiConnect24 */
+.dropdown-content {
+  z-index: 1000;
+}
+
+.spin {
+  -webkit-animation: spin 1s linear infinite;
+  -moz-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+}
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+/* Default styles for the cat image */
+.responsive-cat {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Additional styles for smaller screens */
+@media (max-width: 768px) {
+  .responsive-cat {
+    max-width: 75%;
+    /* Adjust the width as needed for smaller screens */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    /* Center the image horizontally */
+  }
+}
+
+.timeline {
+  position: relative;
+
+  .timeline-event {
+    position: relative;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    .timeline-content {
+      position: relative;
+      width: calc(50% - 50px);
+    }
+
+    &::before {
+      display: block;
+      content: "";
+      width: 2px;
+      height: calc(50% - 30px);
+      position: absolute;
+      background: #d2d2d2;
+      left: calc(50% - 1px);
+      top: 0;
+    }
+
+    &::after {
+      display: block;
+      content: "";
+      width: 2px;
+      height: calc(50% - 30px);
+      position: absolute;
+      background: #d2d2d2;
+      left: calc(50% - 1px);
+      top: calc(50% + 30px);
+    }
+
+    &:first-child::before,
+    &:last-child::after {
+      display: none;
+    }
+
+    &:nth-child(even) .timeline-content {
+      margin-left: calc(50% + 50px);
+    }
+
+    &:nth-child(odd) .timeline-content {
+      margin-left: 0;
+    }
+  }
+
+  .timeline-badge {
+    display: block;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: #d2d2d2;
+    top: calc(50% - 8px);
+    right: calc(50% - 8px);
+    border-radius: 50%;
+    text-align: center;
+    cursor: default;
+
+    i {
+      font-size: 25px;
+      line-height: 40px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .timeline {
+    .timeline-event {
+      .timeline-content {
+        width: calc(100% - 70px);
+      }
+
+      &::before,
+      &::after {
+        left: 19px;
+      }
+
+      &:nth-child(even) .timeline-content,
+      &:nth-child(odd) .timeline-content {
+        margin-left: 70px;
+      }
+    }
+
+    .timeline-badge {
+      left: 12px;
+    }
+  }
+}
+
+.card-title {
+  line-height: 1em;
+
+  &.gradient {
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    padding-bottom: 64px;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(125, 185, 232, 0) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.8) 100%);
+  }
+}
+.navbar {
+  background-color: #222;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.navbar-brand a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.navbar-toggler {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: none; /* Hidden by default on larger screens */
+}
+
+.navbar-toggler-icon {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+}
+
+.navbar-menu {
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin-left: 20px;
+  position: relative;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  display: block;
+}
+
+.nav-link.active {
+  font-weight: bold;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  list-style: none;
+  position: absolute;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 5px;
+  display: none;
+  top: 100%;
+  left: 0;
+  width: 150px;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-menu li {
+  margin-bottom: 5px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar-toggler {
+      display: block; /* Show on smaller screens */
+  }
+
+  .navbar-menu {
+      display: none;
+      width: 100%;
+      margin-top: 10px;
+  }
+
+  .navbar-menu.show {
+      display: block;
+  }
+
+  .navbar-nav {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .nav-item {
+      margin-left: 0;
+      margin-bottom: 10px;
+  }
+
+  .dropdown-menu {
+      position: static;
+      display: none;
+      width: 100%;
+      padding-left: 20px;
+  }
+
+  .dropdown:hover .dropdown-menu,
+  .dropdown-menu.show {
+      display: none;
+  }
+
+  .dropdown.show .dropdown-menu {
+      display: block;
+  }
+}

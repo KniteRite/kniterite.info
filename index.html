@@ -3,12 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My first Website</title>
+    <title>Portfolio - Mamoru Masaru</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .fixed-bottom-right {
+            position: fixed;
+            bottom: 30px; /* Adjust as needed */
+            right: 50px; /* Adjust as needed */
+            width: 80px;
+            height: 80px;
+            z-index: 1000; /* Ensures it's on top of other content */
+	    opacity: 0.25
+        }
+
+    </style>
 </head>
 <body>
-    <h1> Example Title Text </h1>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a href="index.html">Nicholas Porter</a>
+        </div>
+        <button class="navbar-toggler" aria-label="Toggle Navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-menu">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="photography.html" class="nav-link">Photography</a></li>
+                <li class="nav-item"><a href="studios.html" class="nav-link">KniteRite Studios</a></li>
+                <li class="nav-item"><a href="TCSE.html" class="nav-link">Tomodachi Collection Save Editor</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">Social Media</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="youtube.html">YouTube</a></li>
+                        <li><a href="bluesky.html">BlueSky</a></li>
+                        <li><a href="github.html">GitHub</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <script src="script.js"></script>
+    <header>
+        <div style="text-align: center;">
+            <h1><img id="Name" src="StaticName.png" alt="Mamoru Masaru" /></h1>
+        </div>
 
-    This is a website
+        <script>
+            $(function() {
+                $("#Name").hover(
+                    function() {
+                        $(this).attr("src", "AnimatedName.gif");
+                    },
+                    function() {
+                        $(this).attr("src", "StaticName.png");
+                    }
+                );
+            });
+        </script>
+    </header>
 
+    <main>
+        <div style="text-align: center;">
+            <img src="sillysora.png" width="256" height="512" alt="Silly Sora" />
+        </div>
+
+        <section style="text-align: center; padding: 20px;">
+            <p>Hello! My name is Nicholas D. Porter. Also known as "KniteRite" and "Mamoru Masaru",</p>
+            <p>I am a Student Python programmer and future Game Developer with focus on Backend programming over frontend programming (Although I did write this website myself).</p>
+            <p>I appreciate you taking the time to visit this webpage to learn more about me.</p>
+            <p>Below you will find some works that I have been a part of, made myself, or am currently working on!</p>
+        </section>
+    </main>
+
+    <footer>
+        <a href="/Copyright.html"> <img src="Seal.png" alt="Seal of Masaru" class="fixed-bottom-right">
+       <a href="/Studios.html">KniteRite Studios</a> <a href="/Photography"> Photography</a>
+    </footer>
 </body>
 </html>
