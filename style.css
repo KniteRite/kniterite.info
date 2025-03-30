@@ -1,14 +1,70 @@
-/* Custom Stylesheet */
+/* Custom Stylesheet - GRID Conversion */
 /**
  * Use this file to override Materialize files so you can update
  * the core Materialize files in the future
  *
  * Made By MaterializeCSS.com
  */
+/* style.css */
 
+.fixed-bottom-right {
+  position: fixed;
+  bottom: 30px;
+  right: 50px;
+  width: 80px;
+  height: 80px;
+  z-index: 1000;
+  opacity: 0.25;
+}
 
+.header-content,
+.main-headshot,
+.intro-section,
+.project-section,
+.main-footer{
+  text-align: center;
+  padding: 20px;
+}
 
-html {
+.tcse-section{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(Resources/TCSE-BACKGROUND.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: white;
+  background-position: center;
+}
+
+.ra-section{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(Resources/RA-Background.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: white;
+  background-position: center;
+}
+
+.krs-section{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(Resources/KRS-Background.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: white;
+  background-position: center;
+}
+
+.photography-section{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(Resources/PHOTOGRAPHY-BKG.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: white;
+  background-position: center;
+}
+
+.section-link{
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+ html {
   font-family: 'Open Sans', sans-serif;
   font-size: 17px;
   cursor: url("https://rc24.xyz/images/cursors/wii.cur"), default;
@@ -63,7 +119,7 @@ body {
 }
 
 .actually-red {
-  color: #ea454b
+  color: #ea454b;
 }
 
 a {
@@ -85,7 +141,7 @@ p {
 
 .parallax-container {
   min-height: 900px !important;
-  color: rgba(0, 0, 0, .9);
+  color: rgba(0, 0, 0, 0.9);
 }
 
 .parallax-container.small-parallax-container {
@@ -96,7 +152,7 @@ p {
   width: 100%;
 }
 
-@media only screen and (max-width : 992px) {
+@media only screen and (max-width: 992px) {
   .parallax-container .section {
     top: 40%;
   }
@@ -106,7 +162,7 @@ p {
   }
 }
 
-@media only screen and (max-width : 600px) {
+@media only screen and (max-width: 600px) {
   #index-banner .section {
     top: 0;
   }
@@ -122,9 +178,10 @@ p {
 
 .page-footer {
   margin: 0;
-  a {
-    color: #fff;
-  }
+}
+
+.page-footer a {
+  color: #fff;
 }
 
 .full-height {
@@ -132,8 +189,8 @@ p {
   min-height: 100vh;
 }
 
-.herohead{
-  display:none;
+.herohead {
+  display: none;
 }
 
 /* RiiConnect24 */
@@ -185,115 +242,113 @@ p {
 }
 
 .timeline {
-  position: relative;
-
-  .timeline-event {
-    position: relative;
-    padding-top: 5px;
-    padding-bottom: 5px;
-
-    .timeline-content {
-      position: relative;
-      width: calc(50% - 50px);
-    }
-
-    &::before {
-      display: block;
-      content: "";
-      width: 2px;
-      height: calc(50% - 30px);
-      position: absolute;
-      background: #d2d2d2;
-      left: calc(50% - 1px);
-      top: 0;
-    }
-
-    &::after {
-      display: block;
-      content: "";
-      width: 2px;
-      height: calc(50% - 30px);
-      position: absolute;
-      background: #d2d2d2;
-      left: calc(50% - 1px);
-      top: calc(50% + 30px);
-    }
-
-    &:first-child::before,
-    &:last-child::after {
-      display: none;
-    }
-
-    &:nth-child(even) .timeline-content {
-      margin-left: calc(50% + 50px);
-    }
-
-    &:nth-child(odd) .timeline-content {
-      margin-left: 0;
-    }
-  }
-
-  .timeline-badge {
-    display: block;
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    background: #d2d2d2;
-    top: calc(50% - 8px);
-    right: calc(50% - 8px);
-    border-radius: 50%;
-    text-align: center;
-    cursor: default;
-
-    i {
-      font-size: 25px;
-      line-height: 40px;
-    }
-  }
+  display: grid;
+  grid-template-columns: 1fr; /* Single column for the timeline */
 }
 
-@media (max-width: 600px) {
+.timeline .timeline-event {
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.timeline .timeline-event .timeline-content {
+  width: calc(100% - 70px); /* Adjust content width */
+  margin-left: 70px; /* Adjust margin to align content */
+}
+
+.timeline .timeline-event::before,
+.timeline .timeline-event::after {
+  content: "";
+  position: absolute;
+  left: 19px; /* Adjust line position */
+  background: #d2d2d2;
+}
+
+.timeline .timeline-event::before {
+  top: 0;
+  height: calc(50% - 30px);
+  width: 2px;
+}
+
+.timeline .timeline-event::after {
+  top: calc(50% + 30px);
+  height: calc(50% - 30px);
+  width: 2px;
+}
+
+.timeline .timeline-event:first-child::before,
+.timeline .timeline-event:last-child::after {
+  display: none;
+}
+
+.timeline .timeline-badge {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #d2d2d2;
+  top: calc(50% - 8px);
+  left: 12px; /* Adjust badge position */
+  border-radius: 50%;
+  text-align: center;
+  cursor: default;
+}
+
+.timeline .timeline-badge i {
+  font-size: 25px;
+  line-height: 40px;
+}
+
+@media (min-width: 601px) {
   .timeline {
-    .timeline-event {
-      .timeline-content {
-        width: calc(100% - 70px);
-      }
+    grid-template-columns: 1fr;
+  }
 
-      &::before,
-      &::after {
-        left: 19px;
-      }
+  .timeline .timeline-event .timeline-content {
+    width: calc(50% - 50px);
+  }
 
-      &:nth-child(even) .timeline-content,
-      &:nth-child(odd) .timeline-content {
-        margin-left: 70px;
-      }
-    }
+  .timeline .timeline-event::before,
+  .timeline .timeline-event::after {
+    left: calc(50% - 1px);
+  }
 
-    .timeline-badge {
-      left: 12px;
-    }
+  .timeline .timeline-event:nth-child(even) .timeline-content {
+    margin-left: calc(50% + 50px);
+  }
+
+  .timeline .timeline-event:nth-child(odd) .timeline-content {
+    margin-left: 0;
+  }
+
+  .timeline .timeline-badge {
+    right: calc(50% - 8px);
   }
 }
 
 .card-title {
   line-height: 1em;
-
-  &.gradient {
-    display: block;
-    position: absolute;
-    bottom: 0px;
-    padding-bottom: 64px;
-    width: 100%;
-    background: linear-gradient(to bottom, rgba(125, 185, 232, 0) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.8) 100%);
-  }
 }
+
+.card-title.gradient {
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  padding-bottom: 64px;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(125, 185, 232, 0) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.8) 100%);
+}
+
 .navbar {
   background-color: #222;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
   padding: 10px 20px;
+}
+
+.navbar-brand {
+  grid-column: 1;
 }
 
 .navbar-brand a {
@@ -308,6 +363,7 @@ p {
   border: none;
   cursor: pointer;
   display: none; /* Hidden by default on larger screens */
+  grid-column: 3;
 }
 
 .navbar-toggler-icon {
@@ -319,20 +375,20 @@ p {
 }
 
 .navbar-menu {
-  display: flex;
-  flex-grow: 1;
+  grid-column: 2;
+  display: grid;
   justify-content: flex-end;
 }
 
 .navbar-nav {
   list-style: none;
-  display: flex;
+  display: grid;
+  grid-auto-flow: column;
   margin: 0;
   padding: 0;
 }
 
 .nav-item {
-  margin-left: 20px;
   position: relative;
 }
 
@@ -374,43 +430,48 @@ p {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+  .navbar {
+    grid-template-columns: auto 1fr;
+  }
+
   .navbar-toggler {
-      display: block; /* Show on smaller screens */
+    display: block; /* Show on smaller screens */
   }
 
   .navbar-menu {
-      display: none;
-      width: 100%;
-      margin-top: 10px;
+    display: none;
+    grid-column: 1 / 3;
+    width: 100%;
+    margin-top: 10px;
   }
 
   .navbar-menu.show {
-      display: block;
+    display: block;
   }
 
   .navbar-nav {
-      flex-direction: column;
-      align-items: flex-start;
+    grid-auto-flow: row;
+    align-items: flex-start;
   }
 
   .nav-item {
-      margin-left: 0;
-      margin-bottom: 10px;
+    margin-left: 0;
+    margin-bottom: 10px;
   }
 
   .dropdown-menu {
-      position: static;
-      display: none;
-      width: 100%;
-      padding-left: 20px;
+    position: static;
+    display: none;
+    width: 100%;
+    padding-left: 20px;
   }
 
   .dropdown:hover .dropdown-menu,
   .dropdown-menu.show {
-      display: none;
+    display: none;
   }
 
   .dropdown.show .dropdown-menu {
-      display: block;
+    display: block;
   }
 }
