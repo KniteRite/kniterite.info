@@ -6,6 +6,22 @@
     <title>Portfolio - Mamoru Masaru</title>
     <link href="style.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .fade-in {
+            opacity: 1; /* Default to visible for browsers that don't support transitions */
+        }
+
+        @supports (opacity: 0) {
+            .fade-in {
+                opacity: 0; /* Hide for browsers that support opacity */
+                transition: opacity 0.5s ease-in-out;
+            }
+
+            .fade-in.visible {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -19,8 +35,8 @@
             <ul class="navbar-nav">
                 <li class="nav-item"><a href="photography.html" class="nav-link">Photography</a></li>
                 <li class="nav-item"><a href="studios.html" class="nav-link">KniteRite Studios</a></li>
-                <li class="nav-item"><a href="TCSE.html" class="nav-link">Tomodachi Collection Save Editor</a></li>
-                <li class="nav-item"><a href="RA.HTML" class="nav-link">RetroAchievements</a></li>
+                <li class="nav-item"><a href="tcse.html" class="nav-link">Tomodachi Collection Save Editor</a></li>
+                <li class="nav-item"><a href="ra.html" class="nav-link">RetroAchievements</a></li>
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link">Social Media</a>
                     <ul class="dropdown-menu">
@@ -35,17 +51,17 @@
     <script src="script.js"></script>
     <header>
         <div class="header-content">
-            <h1><img id="Name" src="Resources/StaticName.png" alt="Mamoru Masaru" /></h1>
+            <h1><img id="Name" src="resources/staticname.png" alt="Mamoru Masaru" /></h1>
         </div>
 
         <script>
             $(function() {
                 $("#Name").hover(
                     function() {
-                        $(this).attr("src", "Resources/AnimatedName.gif");
+                        $(this).attr("src", "resources/animatedname.gif");
                     },
                     function() {
-                        $(this).attr("src", "Resources/StaticName.png");
+                        $(this).attr("src", "resources/staticname.png");
                     }
                 );
             });
@@ -54,50 +70,50 @@
 
     <main>
         <div class="main-headshot">
-            <img src="Resources/Headshot.png" width="256" height="256" alt="Silly Sora" />
+            <img src="resources/headshot.png" width="256" height="256" alt="Silly Sora" />
         </div>
 
-        <section class="intro-section">
+        <section class="intro-section fade-in">
             <p>Hello! My name is Nicholas D. Porter. Also known as "KniteRite" and "Mamoru Masaru",</p>
             <p>I am a Student Python programmer and future Game Developer with focus on Backend programming over frontend programming (Although I did write this website myself).</p>
             <p>I appreciate you taking the time to visit this webpage to learn more about me.</p>
             <p>Below you will find some works that I have been a part of, made myself, or am currently working on!</p>
         </section>
-        <a href="/TCSE.html" class="section-link">
-        <section class="project-section tcse-section">
+        <a href="/tcse.html" class="section-link">
+        <section class="project-section tcse-section fade-in">
             <p> <br><br><br><br><br><br><br><br> </p>
             <h1>Tomodachi Collection Save Editor</h1>
             <p>I am currently developing a Save Editor program with Arian Kordi.</p>
             <p>This program will allow the direct modification of Tomodachi Collection save files.<br> It will also contain the function to transfer data between Tomodachi Collection and the 3DS title "Tomodachi Life" directly.</p>
-            <p> More information can be found <a href="TCSE.html">here,</a> or at the NavBar Link at the top of the page.</p>
+            <p> More information can be found <a href="tcse.html">here,</a> or at the NavBar Link at the top of the page.</p>
             <p> <br><br><br><br><br><br><br><br> </p>
 
         </section>
         </a>
         <p> <br><br><br><br><br> </p>
-        <a href="/RA.html" class="section-link">
-        <section class="project-section ra-section">
+        <a href="/ra.html" class="section-link">
+        <section class="project-section ra-section fade-in">
             <p> <br><br><br><br><br><br><br><br> </p>
             <h1>RetroAchievements</h1>
             <p>I am a former Junior Developer on the Video Game achievement Website "RetroAchievements".</p>
             <p>I have worked directly with Memory Values in HEXadecimal, and I have translated what certain HEX values represent and how to utilize them to make achievements for older Video Games.</p>
-            <p>As always, you can find more info <a href="RA.html">here</a> or at the NavBar Link.</p>
+            <p>As always, you can find more info <a href="ra.html">here</a> or at the NavBar Link.</p>
             <p> <br><br><br><br><br><br><br><br> </p>
         </section>
         </a>
         <p> <br><br><br><br><br> </p>
-        <a href="/Studios.html" class="section-link">
-        <section class="project-section krs-section">
+        <a href="/studios.html" class="section-link">
+        <section class="project-section krs-section fade-in">
             <p> <br><br><br><br><br><br><br><br> </p>
             <h1>KniteRite Studios</h1>
             <p>KniteRite Studios is the name for my Software and Video Game development buisness of which I am the sole member at this current point in time.</p>
             <p>KniteRite Studios aims to create video games with an emphasis on Emotional connections, specifically with the Mentally Disabled. <br> I am still writing details for Project:Mistua. A story about autism.</p>
-            <p>More information can be found <a href="Studios.html">here.</a></p>
+            <p>More information can be found <a href="studios.html">here.</a></p>
             <p> <br><br><br><br><br><br><br><br> </p>
         </section>
-        <a href="/Photography.html" class="section-link">
+        <a href="/photography.html" class="section-link">
         <p> <br><br><br><br><br> </p>
-        <section class="project-section photography-section">
+        <section class="project-section photography-section fade-in">
             <p> <br><br><br><br><br><br><br><br> </p>
             <h1>Photography</h1>
             <p>As a side hobby, I occasionally take photographs of things I find interesting or notable.</p>
@@ -109,8 +125,28 @@
     </main>
 
     <footer class="main-footer">
-        <a href="/Copyright.html"> <img src="Resources/Seal.png" alt="Seal of Masaru" class="fixed-bottom-right">
-        <a href="/Studios.html">KniteRite Studios</a> <a href="/Photography">Photography</a> <a href="/TCSE">Tomodachi Collection Save Editor</a> <a href="/RA">RetroAchievements</a>
+        <a href="/copyright.html"> <img src="resources/seal.png" alt="Seal of Masaru" class="fixed-bottom-right">
+        <a href="/studios.html">KniteRite Studios</a> <a href="/photography.html">Photography</a> <a href="/tcse.html">Tomodachi Collection Save Editor</a> <a href="/ra.html">RetroAchievements</a>
     </footer>
+
+    <script>
+        $(document).ready(function() {
+            const sections = $(".fade-in");
+
+            function checkVisibility() {
+                sections.each(function() {
+                    const sectionTop = $(this).offset().top;
+                    const windowBottom = $(window).scrollTop() + $(window).height();
+
+                    if (sectionTop < windowBottom) {
+                        $(this).addClass("visible");
+                    }
+                });
+            }
+
+            $(window).on("scroll resize", checkVisibility);
+            checkVisibility(); // Initial check on page load
+        });
+    </script>
 </body>
 </html>
