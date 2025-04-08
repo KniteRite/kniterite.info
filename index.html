@@ -21,6 +21,10 @@
                 opacity: 1;
             }
         }
+
+        .project-section {
+            cursor: pointer; /* Add a pointer cursor to indicate it's clickable */
+        }
     </style>
 </head>
 <body>
@@ -79,20 +83,19 @@
             <p>I appreciate you taking the time to visit this webpage to learn more about me.</p>
             <p>Below you will find some works that I have been a part of, made myself, or am currently working on!</p>
         </section>
-        <a href="/tcse.html" class="section-link">
-        <section class="project-section tcse-section fade-in">
+
+        <section class="project-section tcse-section fade-in" data-href="/tcse.html">
             <p> <br><br><br><br><br><br><br><br> </p>
             <h1>Tomodachi Collection Save Editor</h1>
             <p>I am currently developing a Save Editor program with Arian Kordi.</p>
             <p>This program will allow the direct modification of Tomodachi Collection save files.<br> It will also contain the function to transfer data between Tomodachi Collection and the 3DS title "Tomodachi Life" directly.</p>
-            <p> More information can be found <a href="tcse.html">here,</a> or at the NavBar Link at the top of the page.</p>
+            <p> More information can be found <a href="tcse.html">here</a>, or at the NavBar Link at the top of the page.</p>
             <p> <br><br><br><br><br><br><br><br> </p>
-
         </section>
-        </a>
+
         <p> <br><br><br><br><br> </p>
-        <a href="/ra.html" class="section-link">
-        <section class="project-section ra-section fade-in">
+
+        <section class="project-section ra-section fade-in" data-href="/ra.html">
             <p> <br><br><br><br><br><br><br><br> </p>
             <h1>RetroAchievements</h1>
             <p>I am a former Junior Developer on the Video Game achievement Website "RetroAchievements".</p>
@@ -100,38 +103,40 @@
             <p>As always, you can find more info <a href="ra.html">here</a> or at the NavBar Link.</p>
             <p> <br><br><br><br><br><br><br><br> </p>
         </section>
-        </a>
+
         <p> <br><br><br><br><br> </p>
-        <a href="/studios.html" class="section-link">
-        <section class="project-section krs-section fade-in">
+
+        <section class="project-section krs-section fade-in" data-href="/studios.html">
             <p> <br><br><br><br><br><br><br><br> </p>
             <h1>KniteRite Studios</h1>
             <p>KniteRite Studios is the name for my Software and Video Game development buisness of which I am the sole member at this current point in time.</p>
             <p>KniteRite Studios aims to create video games with an emphasis on Emotional connections, specifically with the Mentally Disabled. <br> I am still writing details for Project:Mistua. A story about autism.</p>
-            <p>More information can be found <a href="studios.html">here.</a></p>
+            <p>More information can be found <a href="studios.html">here</a>.</p>
             <p> <br><br><br><br><br><br><br><br> </p>
         </section>
-        <a href="/photography.html" class="section-link">
+
         <p> <br><br><br><br><br> </p>
-        <section class="project-section photography-section fade-in">
+
+        <section class="project-section photography-section fade-in" data-href="/photography.html">
             <p> <br><br><br><br><br><br><br><br> </p>
             <h1>Photography</h1>
             <p>As a side hobby, I occasionally take photographs of things I find interesting or notable.</p>
             <p>These photographs are under Copyright by Me, Nicholas Porter (Masaru Mamoru) and KniteRite Studios.</p>
             <p>Please contact me at <a href="mailto:mmamoru@kniterite.info">mmamoru@kniterite.info</a> for Inquiries and requests for usage of said photographs.</p>
-            <p>My photography portfolio can be found <a href="photography.html">here.</a></p>
+            <p>My photography portfolio can be found <a href="photography.html">here</a>.</p>
             <p> <br><br><br><br><br><br><br><br> </p>
         </section>
     </main>
 
     <footer class="main-footer">
-        <a href="/copyright.html"> <img src="resources/seal.png" alt="Seal of Masaru" class="fixed-bottom-right">
+        <a href="/copyright.html"> <img src="resources/seal.png" alt="Seal of Masaru" class="fixed-bottom-right"></a>
         <a href="/studios.html">KniteRite Studios</a> <a href="/photography.html">Photography</a> <a href="/tcse.html">Tomodachi Collection Save Editor</a> <a href="/ra.html">RetroAchievements</a>
     </footer>
 
     <script>
         $(document).ready(function() {
             const sections = $(".fade-in");
+            const projectSections = $(".project-section");
 
             function checkVisibility() {
                 sections.each(function() {
@@ -146,6 +151,14 @@
 
             $(window).on("scroll resize", checkVisibility);
             checkVisibility(); // Initial check on page load
+
+            // Make the entire project section clickable
+            projectSections.on("click", function() {
+                const href = $(this).data("href");
+                if (href) {
+                    window.location.href = href;
+                }
+            });
         });
     </script>
 </body>
