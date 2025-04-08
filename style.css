@@ -193,7 +193,7 @@ h1 {
 
 .tcse-section {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url(Resources/TCSE-BACKGROUND.png);
+    url(Resources/tcse-background.png);
   background-size: contain;
   background-repeat: no-repeat;
   color: white;
@@ -202,7 +202,7 @@ h1 {
 
 .ra-section {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url(Resources/RA-Background.png);
+    url(Resources/ra-background.png);
   background-size: contain;
   background-repeat: no-repeat;
   color: white;
@@ -211,7 +211,7 @@ h1 {
 
 .krs-section {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url(Resources/KRS-Background.png);
+    url(Resources/krs-background.png);
   background-size: contain;
   background-repeat: no-repeat;
   color: white;
@@ -220,7 +220,7 @@ h1 {
 
 .photography-section {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url(Resources/PHOTOGRAPHY-BKG.png);
+    url(Resources/photography-bkg.png);
   background-size: contain;
   background-repeat: no-repeat;
   color: white;
