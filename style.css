@@ -5,66 +5,12 @@
  *
  * Made By MaterializeCSS.com
  */
-/* style.css */
 
-.fixed-bottom-right {
-  position: fixed;
-  bottom: 30px;
-  right: 50px;
-  width: 80px;
-  height: 80px;
-  z-index: 1000;
-  opacity: 0.25;
-}
+/* -------------------------------------------------- */
+/* General                       */
+/* -------------------------------------------------- */
 
-.header-content,
-.main-headshot,
-.intro-section,
-.project-section,
-.main-footer{
-  text-align: center;
-  padding: 20px;
-}
-
-.tcse-section{
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(Resources/TCSE-BACKGROUND.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  color: white;
-  background-position: center;
-}
-
-.ra-section{
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(Resources/RA-Background.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  color: white;
-  background-position: center;
-}
-
-.krs-section{
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(Resources/KRS-Background.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  color: white;
-  background-position: center;
-}
-
-.photography-section{
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(Resources/PHOTOGRAPHY-BKG.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  color: white;
-  background-position: center;
-}
-
-.section-link{
-  display: block;
-  text-decoration: none;
-  color: inherit;
-}
-
- html {
+html {
   font-family: 'Open Sans', sans-serif;
   font-size: 17px;
   cursor: url("https://rc24.xyz/images/cursors/wii.cur"), default;
@@ -73,6 +19,32 @@
 
 body {
   color: #000;
+  font-size: 16px; /* Adjust base font size for mobile */
+  line-height: 1.6; /* Improve line spacing for readability */
+}
+
+p {
+  line-height: 1.6rem;
+}
+
+a {
+  color: #00b0f4;
+  cursor: url("https://rc24.xyz/images/cursors/wii-hover.cur"), pointer;
+  text-decoration: none; /* Ensure links are styled consistently */
+}
+
+.section-link {
+  display: block;
+  color: inherit; /* Prevent link color from overriding section text color */
+}
+
+/* -------------------------------------------------- */
+/* Typography                    */
+/* -------------------------------------------------- */
+
+h1 {
+  font-size: 1.5em; /* Adjust heading size for mobile */
+  text-align: center; /* Center headings */
 }
 
 .header {
@@ -84,260 +56,49 @@ body {
   /* yes I know this ain't white */
 }
 
-/* Materialize stuff */
-
-@media (prefers-color-scheme: dark) {
-  html {
-    background: #1c1c1c;
-  }
-
-  body {
-    color: #fff;
-  }
-
-  .light {
-    color: #fff;
-  }
-
-  .header {
-    color: #fff;
-  }
-
-  .collection .collection-item {
-    background-color: #222;
-    border-bottom: 1px solid #e0e0e0;
-  }
-
-  .collection.with-header .collection-header {
-    background-color: #222;
-    border-bottom: 1px solid #e0e0e0;
-  }
-
-  .card {
-    background-color: #222;
-  }
-}
-
 .actually-red {
   color: #ea454b;
 }
 
-a {
-  color: #00b0f4;
-  cursor: url("https://rc24.xyz/images/cursors/wii-hover.cur"), pointer;
+/* -------------------------------------------------- */
+/* Layout                        */
+/* -------------------------------------------------- */
+
+.header-content,
+.main-headshot,
+.intro-section,
+.project-section,
+.main-footer {
+  text-align: center;
+  padding: 20px;
 }
 
-.collection {
-  background: #222;
+.intro-section,
+.project-section {
+  max-width: 95%; /* Prevent content from stretching too wide on mobile */
+  margin: 0 auto; /* Center the content on mobile */
+  padding: 15px; /* Adjust padding for mobile */
+  margin-bottom: 20px; /* Add margin between sections */
 }
 
-p {
-  line-height: 2rem;
-}
-
-.button-collapse {
-  color: #26a69a;
-}
-
-.parallax-container {
-  min-height: 900px !important;
-  color: rgba(0, 0, 0, 0.9);
-}
-
-.parallax-container.small-parallax-container {
-  min-height: 0;
-}
-
-.parallax-container .section {
-  width: 100%;
-}
-
-@media only screen and (max-width: 992px) {
-  .parallax-container .section {
-    top: 40%;
-  }
-
-  #index-banner .section {
-    top: 10%;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  #index-banner .section {
-    top: 0;
-  }
-}
-
-.icon-block {
-  padding: 0 15px;
-}
-
-.icon-block .material-icons {
-  font-size: inherit;
-}
-
-.page-footer {
-  margin: 0;
-}
-
-.page-footer a {
-  color: #fff;
-}
-
-.full-height {
-  min-height: 100%;
-  min-height: 100vh;
-}
-
-.herohead {
-  display: none;
-}
-
-/* RiiConnect24 */
-.dropdown-content {
-  z-index: 1000;
-}
-
-.spin {
-  -webkit-animation: spin 1s linear infinite;
-  -moz-animation: spin 1s linear infinite;
-  animation: spin 1s linear infinite;
-}
-
-@-moz-keyframes spin {
-  100% {
-    -moz-transform: rotate(360deg);
-  }
-}
-
-@-webkit-keyframes spin {
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
-
-@keyframes spin {
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
-/* Default styles for the cat image */
-.responsive-cat {
-  max-width: 100%;
+.main-headshot img {
+  max-width: 100%; /* Scale images to fit container */
   height: auto;
 }
 
-/* Additional styles for smaller screens */
-@media (max-width: 768px) {
-  .responsive-cat {
-    max-width: 75%;
-    /* Adjust the width as needed for smaller screens */
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    /* Center the image horizontally */
-  }
+.fixed-bottom-right {
+  position: fixed;
+  bottom: 30px;
+  right: 50px;
+  width: 80px;
+  height: 80px;
+  z-index: 1000;
+  opacity: 0.25;
 }
 
-.timeline {
-  display: grid;
-  grid-template-columns: 1fr; /* Single column for the timeline */
-}
-
-.timeline .timeline-event {
-  position: relative;
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-.timeline .timeline-event .timeline-content {
-  width: calc(100% - 70px); /* Adjust content width */
-  margin-left: 70px; /* Adjust margin to align content */
-}
-
-.timeline .timeline-event::before,
-.timeline .timeline-event::after {
-  content: "";
-  position: absolute;
-  left: 19px; /* Adjust line position */
-  background: #d2d2d2;
-}
-
-.timeline .timeline-event::before {
-  top: 0;
-  height: calc(50% - 30px);
-  width: 2px;
-}
-
-.timeline .timeline-event::after {
-  top: calc(50% + 30px);
-  height: calc(50% - 30px);
-  width: 2px;
-}
-
-.timeline .timeline-event:first-child::before,
-.timeline .timeline-event:last-child::after {
-  display: none;
-}
-
-.timeline .timeline-badge {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  background: #d2d2d2;
-  top: calc(50% - 8px);
-  left: 12px; /* Adjust badge position */
-  border-radius: 50%;
-  text-align: center;
-  cursor: default;
-}
-
-.timeline .timeline-badge i {
-  font-size: 25px;
-  line-height: 40px;
-}
-
-@media (min-width: 601px) {
-  .timeline {
-    grid-template-columns: 1fr;
-  }
-
-  .timeline .timeline-event .timeline-content {
-    width: calc(50% - 50px);
-  }
-
-  .timeline .timeline-event::before,
-  .timeline .timeline-event::after {
-    left: calc(50% - 1px);
-  }
-
-  .timeline .timeline-event:nth-child(even) .timeline-content {
-    margin-left: calc(50% + 50px);
-  }
-
-  .timeline .timeline-event:nth-child(odd) .timeline-content {
-    margin-left: 0;
-  }
-
-  .timeline .timeline-badge {
-    right: calc(50% - 8px);
-  }
-}
-
-.card-title {
-  line-height: 1em;
-}
-
-.card-title.gradient {
-  display: block;
-  position: absolute;
-  bottom: 0px;
-  padding-bottom: 64px;
-  width: 100%;
-  background: linear-gradient(to bottom, rgba(125, 185, 232, 0) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.8) 100%);
-}
+/* -------------------------------------------------- */
+/* Navigation                    */
+/* -------------------------------------------------- */
 
 .navbar {
   background-color: #222;
@@ -353,7 +114,6 @@ p {
 
 .navbar-brand a {
   color: white;
-  text-decoration: none;
   font-size: 1.5em;
   font-weight: bold;
 }
@@ -394,7 +154,6 @@ p {
 
 .nav-link {
   color: white;
-  text-decoration: none;
   padding: 5px 10px;
   display: block;
 }
@@ -428,7 +187,178 @@ p {
   margin-bottom: 5px;
 }
 
-/* Responsive Styles */
+/* -------------------------------------------------- */
+/* Project Sections              */
+/* -------------------------------------------------- */
+
+.tcse-section {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(Resources/TCSE-BACKGROUND.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: white;
+  background-position: center;
+}
+
+.ra-section {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(Resources/RA-Background.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: white;
+  background-position: center;
+}
+
+.krs-section {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(Resources/KRS-Background.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: white;
+  background-position: center;
+}
+
+.photography-section {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(Resources/PHOTOGRAPHY-BKG.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: white;
+  background-position: center;
+}
+
+/* -------------------------------------------------- */
+/* Footer                        */
+/* -------------------------------------------------- */
+
+.main-footer {
+  padding: 10px;
+  text-align: center; /* Center footer links */
+}
+
+.page-footer {
+  margin: 0;
+}
+
+.page-footer a {
+  color: #fff;
+}
+
+/* -------------------------------------------------- */
+/* Timeline                      */
+/* -------------------------------------------------- */
+
+.timeline {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column for mobile */
+}
+
+.timeline .timeline-event {
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.timeline .timeline-event .timeline-content {
+  width: calc(100% - 50px); /* Adjust content width for mobile */
+  margin-left: 50px; /* Adjust margin to align content for mobile */
+}
+
+.timeline .timeline-event::before,
+.timeline .timeline-event::after {
+  content: "";
+  position: absolute;
+  left: 14px; /* Adjust line position for mobile */
+  background: #d2d2d2;
+}
+
+.timeline .timeline-event::before {
+  top: 0;
+  height: calc(50% - 20px);
+  width: 2px;
+}
+
+.timeline .timeline-event::after {
+  top: calc(50% + 20px);
+  height: calc(50% - 20px);
+  width: 2px;
+}
+
+.timeline .timeline-event:first-child::before,
+.timeline .timeline-event:last-child::after {
+  display: none;
+}
+
+.timeline .timeline-badge {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #d2d2d2;
+  top: calc(50% - 8px);
+  left: 7px; /* Adjust badge position for mobile */
+  border-radius: 50%;
+  text-align: center;
+  cursor: default;
+}
+
+.timeline .timeline-badge i {
+  font-size: 25px;
+  line-height: 40px;
+}
+
+@media (min-width: 601px) {
+  .timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline .timeline-event .timeline-content {
+    width: calc(50% - 50px);
+  }
+
+  .timeline .timeline-event::before,
+  .timeline .timeline-event::after {
+    left: calc(50% - 1px);
+  }
+
+  .timeline .timeline-event:nth-child(even) .timeline-content {
+    margin-left: calc(50% + 50px);
+  }
+
+  .timeline .timeline-event:nth-child(odd) .timeline-content {
+    margin-left: 0;
+  }
+
+  .timeline .timeline-badge {
+    right: calc(50% - 8px);
+  }
+}
+
+/* -------------------------------------------------- */
+/* Cards                         */
+/* -------------------------------------------------- */
+
+.card-title {
+  line-height: 1em;
+}
+
+.card-title.gradient {
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  padding-bottom: 64px;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(125, 185, 232, 0) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+}
+
+/* -------------------------------------------------- */
+/* Responsive                    */
+/* -------------------------------------------------- */
+
 @media (max-width: 768px) {
   .navbar {
     grid-template-columns: auto 1fr;
@@ -459,6 +389,10 @@ p {
     margin-bottom: 10px;
   }
 
+  .nav-link {
+    padding: 10px 15px; /* Increase padding for touch */
+  }
+
   .dropdown-menu {
     position: static;
     display: none;
@@ -474,4 +408,137 @@ p {
   .dropdown.show .dropdown-menu {
     display: block;
   }
+
+  .responsive-cat {
+    max-width: 75%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    background: #1c1c1c;
+  }
+
+  body {
+    color: #fff;
+  }
+
+  .light {
+    color: #fff;
+  }
+
+  .header {
+    color: #fff;
+  }
+
+  .collection .collection-item {
+    background-color: #222;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .collection.with-header .collection-header {
+    background-color: #222;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .card {
+    background-color: #222;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .parallax-container .section {
+    top: 40%;
+  }
+
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+/* -------------------------------------------------- */
+/* Unused / Materialize Leftovers */
+/* -------------------------------------------------- */
+
+.collection {
+  background: #222; /* Potentially unused */
+}
+
+.button-collapse {
+  color: #26a69a; /* Potentially unused */
+}
+
+.parallax-container {
+  min-height: 900px !important; /* Potentially unused */
+  color: rgba(0, 0, 0, 0.9); /* Potentially unused */
+}
+
+.parallax-container.small-parallax-container {
+  min-height: 0; /* Potentially unused */
+}
+
+.parallax-container .section {
+  width: 100%; /* Potentially unused */
+}
+
+.icon-block {
+  padding: 0 15px; /* Potentially unused */
+}
+
+.icon-block .material-icons {
+  font-size: inherit; /* Potentially unused */
+}
+
+.full-height {
+  min-height: 100%; /* Potentially unused */
+  min-height: 100vh; /* Potentially unused */
+}
+
+.herohead {
+  display: none; /* Potentially unused */
+}
+
+/* RiiConnect24 */
+.dropdown-content {
+  z-index: 1000; /* Potentially specific to another part of the site */
+}
+
+.spin {
+  -webkit-animation: spin 1s linear infinite; /* Potentially unused */
+  -moz-animation: spin 1s linear infinite; /* Potentially unused */
+  animation: spin 1s linear infinite; /* Potentially unused */
+}
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg); /* Potentially unused */
+  }
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg); /* Potentially unused */
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg); /* Potentially unused */
+    transform: rotate(360deg); /* Potentially unused */
+  }
+}
+
+/* Default styles for the cat image */
+.responsive-cat {
+  max-width: 100%;
+  height: auto;
 }
